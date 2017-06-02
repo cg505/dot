@@ -28,6 +28,8 @@
     fish-mode ;; for editing fish shell configuration files
     go-mode ;; for editing go code
     go-autocomplete ;; AC support for go
+    tern ;; IDE-level JS support
+    tern-auto-complete ;; ac support with tern
 
     ;; THEMES
     solarized-theme)
