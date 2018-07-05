@@ -45,7 +45,7 @@ stuff.  This also respects the user's shell decision."
   ;; set, and the path should already be okay.
   (if (not (getenv "TERM_PROGRAM"))
       ;; Ask the shell to print out its value for $PATH.
-      (let ((path (shell-command-to-string "$SHELL -cli \"printf %s \\\"\\\$PATH\\\"\"")))
+      (let ((path (shell-command-to-string "/bin/sh -cli \"printf %s \\\"\\\$PATH\\\"\"")))
         ;; Set the PATH variable to this to match everything up.
         (setenv "PATH" path)
         ;; Split $PATH and store in `exec-path'.

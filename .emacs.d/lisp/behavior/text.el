@@ -6,14 +6,14 @@
 
 (require 'cl)
 
-;;; ace jump mode
-(global-set-key (kbd "C-c SPC") #'ace-jump-mode)
+;;; avy jump mode
+(global-set-key (kbd "C-c SPC") #'avy-goto-word-1)
+(global-set-key (kbd "C-c '") #'avy-goto-char)
 
 ;; save zapped chars to kill ring
-(with-eval-after-load 'ace-jump-zap
-  (setf ajz/zap-function #'kill-region))
-(global-set-key (kbd "M-z") #'ace-jump-zap-to-char)
-
+(with-eval-after-load 'avy-zap
+  (setf avy-zap-function #'kill-region))
+(global-set-key (kbd "M-z") #'avy-zap-to-char-dwim)
 
 ;;; jump to line
 (global-set-key (kbd "C-x g") #'goto-line)

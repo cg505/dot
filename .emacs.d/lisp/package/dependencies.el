@@ -11,8 +11,8 @@
     auto-complete ;; code autocompletion
     markdown-mode ;; major mode for markdown
     smart-tabs-mode ;; indentation with tabs and spaces
-    ace-jump-mode ;; immediately jump to any visible character
-    ace-jump-zap ;; zap-to-char but harnessing ace-jump
+    avy ;; immediately jump to any visible character
+    avy-zap ;; zap-to-char but harnessing avy
     editorconfig ;; editorconfig plugin
     hl-todo ;; highlight TODO, FIXME, FAIL, etc.
     highlight-symbol ;; navigate between and highlight symbols
@@ -21,8 +21,16 @@
     rust-mode ;; for editing Rust code
     tern ;; IDE-level JS support
     tern-auto-complete ;; ac support with tern
-    buttercup ;; for tests
     ensime ;; scala IDE
+    yaml-mode ;; for editing YAML files
+    buttercup ;; for tests
+    smartparens ;; for dealing with paired control flow symbols
+    gitignore-mode ;; for editing .gitignore files
+    gitattributes-mode ;; for editing .gitattributes files
+    gitconfig-mode ;; for editing .git/config files
+    fish-mode ;; for editing fish shell configuration files
+    go-mode ;; for editing go code
+    go-autocomplete ;; AC support for go
 
     ;; THEMES
     solarized-theme)

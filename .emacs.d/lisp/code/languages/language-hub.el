@@ -2,10 +2,13 @@
   '(c
     elisp
     elixir
+    fish
     ruby
     rust
     java
-    web-c)
+    sh
+    web-c
+    go)
   "A list of packages configured by the language-hub.")
 
 (let ((to-compile ()))
