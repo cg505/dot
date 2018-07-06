@@ -36,4 +36,11 @@
     solarized-theme)
   "A list of all packages required for operation.")
 
+(setf package-pinned-packages
+      '(;; csharp-mode stable is incompatible with emacs 26
+        (csharp-mode . "melpa")
+        ;; hightlight-symbol stable is REALLY LOUD (doesn't
+        ;; have highlight-symbol-occurrence-message)
+        (highlight-symbol . "melpa")))
+
 (provide 'dependencies)

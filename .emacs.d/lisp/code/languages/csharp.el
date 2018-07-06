@@ -1,0 +1,15 @@
+(define-key company-active-map (kbd ".") (lambda() (interactive) (company-complete-selection-insert-key-and-complete '".")))
+(define-key company-active-map (kbd "]") (lambda() (interactive) (company-complete-selection-insert-key-and-complete '"]")))
+(define-key company-active-map (kbd "[") (lambda() (interactive) (company-complete-selection-insert-key '"[")))
+(define-key company-active-map (kbd ")") (lambda() (interactive) (company-complete-selection-insert-key '")")))
+(define-key company-active-map (kbd ";") (lambda() (interactive) (company-complete-selection-insert-key '";")))
+(define-key company-active-map (kbd ">") (lambda() (interactive) (company-complete-selection-insert-key '">")))
+(define-key omnisharp-mode-map (kbd "<M-RET>") 'omnisharp-run-code-action-refactoring)
+(define-key omnisharp-mode-map (kbd "C-c o r") 'omnisharp-rename-interactively)
+(define-key omnisharp-mode-map (kbd "}") 'csharp-indent-function-on-closing-brace)
+(define-key omnisharp-mode-map (kbd "M-.") 'omnisharp-go-to-definition)
+(define-key omnisharp-mode-map (kbd "C-.") 'omnisharp-find-usages)
+(define-key omnisharp-mode-map (kbd "C-M \\") 'omnisharp-code-format-region)
+(add-to-list 'company-backends 'company-omnisharp)
+
+;; modes to enable: omnisharp-mode company-mode eldoc-mode flycheck-mode
