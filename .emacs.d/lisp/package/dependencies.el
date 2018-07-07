@@ -9,6 +9,7 @@
     expand-region ;; expand region to successively larger sexps
     magit ;; make Git and Emacs both way cooler
     auto-complete ;; code autocompletion
+    company ;; more code autocompletion
     markdown-mode ;; major mode for markdown
     smart-tabs-mode ;; indentation with tabs and spaces
     avy ;; immediately jump to any visible character
@@ -28,6 +29,7 @@
     fish-mode ;; for editing fish shell configuration files
     go-mode ;; for editing go code
     go-autocomplete ;; AC support for go
+    omnisharp ;; for editing C# code
 
     ;; THEMES
     solarized-theme)
@@ -36,6 +38,8 @@
 (with-eval-after-load 'package
   (setf package-pinned-packages
         '(;; stable highlight-symbol is very old and VERY LOUD
-          (highlight-symbol . "melpa"))))
+          (highlight-symbol . "melpa")
+          ;; csharp-mode stable is incompatible with emacs 26
+          (csharp-mode . "melpa"))))
 
 (provide 'dependencies)
