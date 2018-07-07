@@ -20,7 +20,7 @@
   (let ((recent-alist (kotct/recentf-show-basenames-modified-directories
                        (recentf-menu-elements recentf-max-saved-items))))
     (find-file (assoc-default
-                (ido-completing-read "Find recent file: " (mapcar #'car recent-alist))
+                (completing-read "Find recent file: " (mapcar #'car recent-alist))
                 recent-alist))))
 
 (global-set-key (kbd "C-x C-r") #'kotct/ido-recentf-open)
