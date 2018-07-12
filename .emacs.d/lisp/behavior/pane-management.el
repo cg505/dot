@@ -25,7 +25,11 @@ or if passed an argument, but just current frame if otherwise."
 (global-set-key (kbd "C-x C-c") #'kotct/close-current-frame-or-emacs)
 
 ;; Set yes-or-no prompt to y or n
-(fset 'yes-or-no-p 'y-or-n-p)
+(advice-add 'yes-or-no-p :override #'y-or-n-p)
+
+;; framemove
+(require 'framemove)
+(setf framemove-hook-into-windmove t)
 
 ;;; i recommend some hydrocodone
 (provide 'pane-management)

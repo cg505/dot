@@ -42,7 +42,8 @@ Do M-x kotct/omnisharp-install-server and we'll take care of it."))))
           (lambda ()
             (auto-complete-mode -1)
             (company-mode +1)
-            (kotct/omnisharp-maybe-start)))
+            (kotct/omnisharp-maybe-start)
+            (setf indent-tabs-mode t)))
 
 (defvar omnisharp-company-active-map
   nil
@@ -65,6 +66,7 @@ Do M-x kotct/omnisharp-install-server and we'll take care of it."))))
         (insert key)))))
 
 (with-eval-after-load 'omnisharp
+  (setf omnisharp-imenu-support t)
   (add-hook 'omnisharp-mode-hook
             (lambda ()
               (with-eval-after-load 'company
@@ -72,8 +74,8 @@ Do M-x kotct/omnisharp-install-server and we'll take care of it."))))
               (eldoc-mode +1)
               (flycheck-mode +1)))
 
-  (define-key omnisharp-mode-map (kbd "<C-RET>") #'omnisharp-run-code-action-refactoring)
-  (define-key omnisharp-mode-map (kbd "<M-RET>") #'omnisharp-run-code-action-refactoring)
+  (define-key omnisharp-mode-map (kbd "C-<return>") #'omnisharp-run-code-action-refactoring)
+  (define-key omnisharp-mode-map (kbd "M-<return>") #'omnisharp-run-code-action-refactoring)
   (define-key omnisharp-mode-map (kbd "C-c o r") #'omnisharp-rename)
   (define-key omnisharp-mode-map (kbd "M-.") #'omnisharp-go-to-definition)
   (define-key omnisharp-mode-map (kbd "C-.") #'omnisharp-find-usages)

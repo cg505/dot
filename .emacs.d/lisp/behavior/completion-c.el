@@ -7,8 +7,9 @@
 
 (ivy-mode +1)
 (counsel-mode +1)
-(setq ivy-use-virtual-buffers t)
-(setq enable-recursive-minibuffers t)
+(setf ivy-use-virtual-buffers t)
+(setf ivy-sort-matches-functions-alist '((t . nil)))
+(setf enable-recursive-minibuffers t)
 (global-set-key (kbd "C-c C-r") #'ivy-resume)
 (global-set-key (kbd "M-i") #'counsel-imenu)
 (define-key ivy-minibuffer-map (kbd "RET") #'ivy-alt-done)
@@ -57,7 +58,7 @@ MODE is a symbol which can be grid (default), vertical, or normal."
 (kotct/ido-set-menu-mode 'grid)
 
 ;;; smex
-;; (smex-initialize)
+(smex-initialize)
 ;; (global-set-key (kbd "M-x") #'smex)
 ;; (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
@@ -66,5 +67,9 @@ MODE is a symbol which can be grid (default), vertical, or normal."
 
 ;;; autocomplete
 (ac-config-default)
+
+;;; company
+(with-eval-after-load 'company
+  (define-key company-mode-map (kbd "TAB") #'company-indent-or-complete-common))
 
 (provide 'completion-c)
