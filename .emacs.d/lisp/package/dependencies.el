@@ -40,8 +40,6 @@
 (with-eval-after-load 'package
   (setf package-pinned-packages
         '(;; stable highlight-symbol is very old and VERY LOUD
-          (highlight-symbol . "melpa")
-          ;; csharp-mode stable is incompatible with emacs 26
-          (csharp-mode . "melpa"))))
+          (highlight-symbol . "melpa"))))
 
 (provide 'dependencies)
